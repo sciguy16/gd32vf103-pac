@@ -129,7 +129,7 @@ pub enum Interrupt {
     #[doc = "86 - USBFS"]
     USBFS = 86,
 }
-unsafe impl bare_metal::Nr for Interrupt {
+unsafe impl riscv::interrupt::Nr for Interrupt {
     #[inline(always)]
     fn nr(&self) -> u8 {
         *self as u8
